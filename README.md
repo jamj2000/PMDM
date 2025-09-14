@@ -22,4 +22,5 @@ Módulo de **Programación Multimedia y Dispositivos Móviles** del ciclo de Des
 
 ## Referencias
 
-- [Learn NextJS](https://nextjs.org/learn)
+- [Documentación de React Native](https://reactnative.dev/docs/getting-started)
+- [Documentación de Expo](https://docs.expo.dev/)

@@ -70,8 +70,10 @@ const styles = StyleSheet.create({
 - **Soporta herencia limitada**: No hay cascada como en CSS tradicional. Cada componente recibe explícitamente sus estilos.
 - **Composición de estilos**: Puedes pasar un array a style para combinar varios estilos:
 
-<Text style={[styles.texto, styles.destacado]}>Texto</Text>
 
+```js
+<Text style={[styles.texto, styles.destacado]}>Texto</Text>
+```
 
 👉 En resumen: StyleSheet en React Native es la forma recomendada de definir estilos optimizados y estructurados para tus componentes, reemplazando el uso de CSS tradicional.
 
