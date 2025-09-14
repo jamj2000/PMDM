@@ -1,7 +1,7 @@
 > PROGRAMACIÓN MULTIMEDIA Y DISPOSITVOS MÓVILES
 
 # Tema 2: DESARROLLO DE APLICACIONES PARA DISPOSITIVOS MÓVILES <!-- omit in toc -->
-> Desarrollo usando React Native y Expo
+> Desarrollo usando React Native y Expo  
 > CONCEPTOS
 
 

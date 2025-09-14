@@ -1,7 +1,7 @@
 > PROGRAMACIÓN MULTIMEDIA Y DISPOSITVOS MÓVILES
 
 # Tema 5: DESARROLLO DE JUEGOS 2D Y 3D <!-- omit in toc -->
-> Desarrollo de juegos
+> Desarrollo de juegos  
 > CONCEPTOS
 
 

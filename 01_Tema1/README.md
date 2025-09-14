@@ -1,7 +1,7 @@
 > PROGRAMACIÓN MULTIMEDIA Y DISPOSITVOS MÓVILES
 
 # Tema 1: TECNOLOGÍAS DE DESARROLLO PARA DISPOSITIVOS MÓVILES <!-- omit in toc -->
-> Ánalisis de tecnologías disponibles para el desarrollo para móvil
+> Ánalisis de tecnologías disponibles para el desarrollo para móvil  
 > CONCEPTOS
 
 
