@@ -8,11 +8,12 @@
 
 - [1. Introducción](#1-introducción)
 - [2. React Native](#2-react-native)
-  - [3. Estilos](#3-estilos)
-    - [3.0.1. Ejemplo básico:](#301-ejemplo-básico)
-    - [3.0.2. Características principales:](#302-características-principales)
-- [4. Expo](#4-expo)
-- [5. Referencias](#5-referencias)
+  - [2.1. Estilos](#21-estilos)
+    - [2.1.1. Ejemplo básico:](#211-ejemplo-básico)
+    - [2.1.2. Características principales:](#212-características-principales)
+- [3. Expo](#3-expo)
+- [4. Referencias](#4-referencias)
+
 
 
 
@@ -29,7 +30,7 @@
 
 
 
-## 3. Estilos
+## 2.1. Estilos
 
 
 En React Native, **StyleSheet** es un módulo que se usa para definir y organizar los estilos de los componentes, de forma similar al CSS en la web, pero adaptado al entorno móvil.
@@ -40,7 +41,7 @@ En lugar de escribir CSS tradicional, **en React Native se usan objetos de JavaS
 - Validar propiedades de estilo, mostrando advertencias si usas una que no es válida.
 - Optimizar el rendimiento, ya que internamente convierte los estilos en una representación más eficiente para que el motor nativo los procese.
 
-### 3.0.1. Ejemplo básico:
+### 2.1.1. Ejemplo básico:
 
 ```js
 import React from 'react';
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-### 3.0.2. Características principales:
+### 2.1.2. Características principales:
 
 - **Sintaxis tipo objeto**: Los estilos se definen como objetos de JS.
 - **Unidades implícitas**: No se usan px, todos los valores numéricos se interpretan como píxeles independientes de la densidad.
@@ -87,12 +88,12 @@ const styles = StyleSheet.create({
 
 
 
-# 4. Expo
+# 3. Expo
 
 
 
 
 
-# 5. Referencias
+# 4. Referencias
 
 
