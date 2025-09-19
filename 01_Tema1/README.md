@@ -15,10 +15,8 @@
 - [3. Introdución a React Native y Expo](#3-introdución-a-react-native-y-expo)
   - [3.1. React Native](#31-react-native)
   - [3.2. Expo](#32-expo)
-- [4. Referencias](#4-referencias)
-
-
-
+- [4. Crear nuevo proyecto](#4-crear-nuevo-proyecto)
+- [5. Referencias](#5-referencias)
 
 
 
@@ -132,6 +130,15 @@ Se puede pensar como una “capa” encima de React Native que simplifica el pro
 
 ![react native y expo](assets/react_native-expo.png)
 
+# 4. Crear nuevo proyecto
+
+```sh
+npx  create-expo-app@latest  nombre-proyecto
+```
+
+> [!NOTE]  
+> **Prerequisitos:**  
+> - Tener instalado Node.js (node, npm, npx)
 
 
-# 4. Referencias
+# 5. Referencias
