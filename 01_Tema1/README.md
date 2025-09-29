@@ -154,16 +154,22 @@ Por ejemplo:
 npx   create-expo-app   --template blank
 ```
 
-> [!NOTE]
->
-> Las plantillas disponibles son:
->
-> - `default`
-> - `blank`
-> - `blank-typescript`
-> - `tabs` 
-> - `bare-minimum`
+Las plantillas disponibles son:
 
+- **default**  
+  Plantilla predeterminada. Diseñada para construir aplicaciones con múltiples pantallas. Incluye herramientas recomendadas como Expo CLI, la librería Expo Router y la configuración de TypeScript habilitada. Adecuada para la mayoría de las aplicaciones.
+
+- **blank**  
+  Instala las dependencias mínimas requeridas de npm sin configurar la navegación.
+
+- **blank-typescript**  
+  Una plantilla en blanco con TypeScript habilitado.
+
+- **tabs**  
+  Instala y configura el enrutamiento basado en archivos con Expo Router y TypeScript habilitado.
+
+- **bare-minimum**  
+  Una plantilla en blanco con directorios nativos (android y ios) generados. Ejecuta `npx expo prebuild` durante la configuración.
 
 
 ## 4.2. Ejemplos
