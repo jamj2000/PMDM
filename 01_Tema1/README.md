@@ -15,8 +15,11 @@
 - [3. Introdución a React Native y Expo](#3-introdución-a-react-native-y-expo)
   - [3.1. React Native](#31-react-native)
   - [3.2. Expo](#32-expo)
-- [4. Crear nuevo proyecto](#4-crear-nuevo-proyecto)
+- [4. Crear nuevo proyecto con expo](#4-crear-nuevo-proyecto-con-expo)
+  - [4.1. Plantillas](#41-plantillas)
+  - [4.2. Ejemplos](#42-ejemplos)
 - [5. Referencias](#5-referencias)
+
 
 
 
@@ -130,7 +133,7 @@ Se puede pensar como una “capa” encima de React Native que simplifica el pro
 
 ![react native y expo](assets/react_native-expo.png)
 
-# 4. Crear nuevo proyecto
+# 4. Crear nuevo proyecto con expo
 
 ```sh
 npx  create-expo-app@latest  nombre-proyecto
@@ -139,6 +142,44 @@ npx  create-expo-app@latest  nombre-proyecto
 > [!NOTE]  
 > **Prerequisitos:**  
 > - Tener instalado Node.js (node, npm, npx)
+
+
+## 4.1. Plantillas
+
+Podemos crear un proyecto nuevo con código de ejemplo con la opción [**`--template`**](https://docs.expo.dev/more/create-expo/#--template)
+
+Por ejemplo:
+
+```sh
+npx   create-expo-app   --template blank
+```
+
+> [!NOTE]
+>
+> Las plantillas disponibles son:
+>
+> - `default`
+> - `blank`
+> - `blank-typescript`
+> - `tabs` 
+> - `bare-minimum`
+
+
+
+## 4.2. Ejemplos
+
+Podemos crear un proyecto nuevo con código de ejemplo con la opción [**`--example`**](https://docs.expo.dev/more/create-expo/#--example)
+
+
+Por ejemplo:
+
+```sh
+npx   create-expo-app   --example with-router
+```
+
+> [!NOTE]
+>
+> Ejemplos disponibles en https://github.com/expo/examples
 
 
 # 5. Referencias
