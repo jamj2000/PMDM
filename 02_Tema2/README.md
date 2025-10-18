@@ -18,9 +18,14 @@
     - [2.3.1. Propiedades:](#231-propiedades)
     - [2.3.2. Métodos útiles](#232-métodos-útiles)
 - [3. Expo](#3-expo)
-  - [3.1. Componentes incorporados en Expo](#31-componentes-incorporados-en-expo)
+  - [3.1. Componentes básicos de RN (UI y estructura)](#31-componentes-básicos-de-rn-ui-y-estructura)
+  - [3.2. Visuales y multimedia](#32-visuales-y-multimedia)
+  - [3.3. APIs de hardware y sensores](#33-apis-de-hardware-y-sensores)
+  - [3.4. APIs del sistema](#34-apis-del-sistema)
+  - [3.5. Servicios y utilidades](#35-servicios-y-utilidades)
+  - [3.6. Configuración y desarrollo](#36-configuración-y-desarrollo)
+  - [3.7. Extras útiles para desarrolladores](#37-extras-útiles-para-desarrolladores)
 - [4. Referencias](#4-referencias)
-
 
 
 ---
@@ -279,7 +284,112 @@ return (
 
 # 3. Expo
 
-## 3.1. Componentes incorporados en Expo
+Expo es el framework recomendado para desarrollar aplicaciones de React Native.
+
+Podemos usar los componentes proporcionados por react-native más muchos otros que ofrece el framework Expo. La lista con los más importantes es la siguiente:
+
+## 3.1. Componentes básicos de RN (UI y estructura)
+| Componente                       | Descripción                                         |
+| -------------------------------- | --------------------------------------------------- |
+| `View`                           | Contenedor básico para diseño y layout.             |
+| `Text`                           | Muestra texto.                                      |
+| `Image`                          | Renderiza imágenes locales o remotas.               |
+| `ScrollView`                     | Contenedor con desplazamiento.                      |
+| `FlatList` / `SectionList`       | Listas optimizadas para grandes volúmenes de datos. |
+| `SafeAreaView`                   | Respeta márgenes seguros en pantallas con notch.    |
+| `Pressable` / `TouchableOpacity` | Detectan toques y gestos del usuario.               |
+| `TextInput`                      | Campo de texto editable.                            |
+| `Button`                         | Botón estándar.                                     |
+
+## 3.2. Visuales y multimedia
+| Módulo                   | Descripción                               |
+| ------------------------ | ----------------------------------------- |
+| `expo-av`                | Reproducción de audio y video.            |
+| `expo-image`             | Carga optimizada de imágenes.             |
+| `expo-blur`              | Efecto de desenfoque sobre vistas.        |
+| `expo-linear-gradient`   | Gradientes de color.                      |
+| `expo-video-thumbnails`  | Genera miniaturas de videos.              |
+| `expo-image-manipulator` | Redimensionar, recortar o rotar imágenes. |
+
+> [!NOTE]
+>
+> Existen un componente **`Image`** tanto en el paquete `react-native` como en el paquete `expo-image`. La diferencia entre Image de React Native y Image de Expo (en el paquete expo-image) es importante, especialmente en temas de rendimiento, caché y funcionalidad avanzada.
+>
+> # Comparativa: `Image` (React Native) vs `expo-image` (Expo)
+> 
+> | Característica | `Image` (React Native) | `expo-image` (Expo) |
+> |----------------|------------------------|----------------------|
+> | **Importación** | `import { Image } from 'react-native';` | `import { Image } from 'expo-image';` |
+> | **Rendimiento** | Básico, sin optimización de carga ni cacheo. | Mucho más rápido gracias a un *pipeline nativo optimizado*. |
+> | **Caché de imágenes** | No tiene caché nativo (se recarga cada vez). | Soporta **caché persistente** y controlada. |
+> | **Formatos soportados** | PNG, JPG, WebP (parcialmente). | PNG, JPG, WebP, HEIC, GIF, AVIF (dependiendo de la plataforma). |
+> | **Placeholders / Loading** | No tiene soporte nativo (debes simularlo). | Soporta *placeholders*, *blurHash*, *transiciones de fade*, etc. |
+> | **Transiciones / efectos** | Limitado a estilos CSS básicos. | Transiciones nativas suaves (fade-in, blur al cargar, etc.). |
+> | **Escalado y resize** | Propiedad `resizeMode`. | Propiedad `contentFit`, con más opciones y comportamiento consistente. |
+> | **Soporte de animaciones** | Animaciones con librerías externas (como `Animated`). | Incluye transiciones integradas y soporte  para animaciones ligeras. |
+> | **Consumo de memoria** | Mayor, especialmente con imágenes grandes. | Optimizado con *streaming y downsampling nativo*. |
+> | **Compatibilidad web** | Soporte básico en Expo Web. | Mejor integración con Expo Web (usa `<img>` debajo). |
+>
+>
+
+
+## 3.3. APIs de hardware y sensores
+| Módulo            | Descripción                                                |
+| ----------------- | ---------------------------------------------------------- |
+| `expo-camera`     | Uso de cámara (fotos, videos, escáner QR).                 |
+| `expo-location`   | Geolocalización y GPS.                                     |
+| `expo-sensors`    | Acceso a acelerómetro, giroscopio, barómetro, etc.         |
+| `expo-battery`    | Nivel y estado de la batería.                              |
+| `expo-device`     | Información del dispositivo (modelo, sistema, fabricante). |
+| `expo-network`    | Conectividad de red.                                       |
+| `expo-haptics`    | Vibraciones y respuesta háptica.                           |
+| `expo-brightness` | Control de brillo de pantalla.                             |
+| `expo-motion`     | Detección de movimiento y orientación.                     |
+
+## 3.4. APIs del sistema
+| Módulo                      | Descripción                                    |
+| --------------------------- | ---------------------------------------------- |
+| `expo-contacts`             | Acceso a contactos del dispositivo.            |
+| `expo-calendar`             | Lectura y escritura de eventos del calendario. |
+| `expo-notifications`        | Notificaciones locales y push.                 |
+| `expo-sharing`              | Compartir archivos con otras apps.             |
+| `expo-file-system`          | Lectura y escritura en el sistema de archivos. |
+| `expo-clipboard`            | Acceso al portapapeles.                        |
+| `expo-speech`               | Texto a voz (TTS).                             |
+| `expo-local-authentication` | Autenticación biométrica (Face ID, Touch ID).  |
+
+## 3.5. Servicios y utilidades
+| Módulo              | Descripción                                    |
+| ------------------- | ---------------------------------------------- |
+| `expo-asset`        | Gestión de recursos como imágenes y fuentes.   |
+| `expo-font`         | Carga de tipografías personalizadas.           |
+| `expo-linking`      | Manejo de enlaces profundos (deep linking).    |
+| `expo-auth-session` | Autenticación OAuth (Google, Facebook, etc.).  |
+| `expo-secure-store` | Almacenamiento seguro (tokens, contraseñas).   |
+| `expo-updates`      | Actualizaciones OTA (sin pasar por App Store). |
+| `expo-random`       | Generación de números aleatorios seguros.      |
+| `expo-crypto`       | Funciones criptográficas (hash, HMAC, etc.).   |
+| `expo-storage`      | Almacenamiento persistente local.              |
+
+## 3.6. Configuración y desarrollo
+| Módulo                  | Descripción                                            |
+| ----------------------- | ------------------------------------------------------ |
+| `expo-constants`        | Datos del entorno de ejecución (ID, versión, etc.).    |
+| `expo-application`      | Información de la app (nombre, versión, build).        |
+| `expo-build-properties` | Configuración nativa avanzada.                         |
+| `expo-dev-client`       | Cliente personalizado para desarrollo nativo.          |
+| `expo-router`           | Sistema de rutas basado en archivos (como Next.js).    |
+| `expo-updates`          | Control de actualizaciones OTA.                        |
+| `expo-keep-awake`       | Mantiene la pantalla encendida mientras se usa la app. |
+
+## 3.7. Extras útiles para desarrolladores
+| Módulo                  | Descripción                              |
+| ----------------------- | ---------------------------------------- |
+| `expo-performance`      | Medición del rendimiento de la app.      |
+| `expo-error-recovery`   | Recuperación ante errores críticos.      |
+| `expo-task-manager`     | Tareas en segundo plano.                 |
+| `expo-background-fetch` | Descarga de datos en segundo plano.      |
+| `expo-splash-screen`    | Control de la pantalla de carga inicial. |
 
 
 
