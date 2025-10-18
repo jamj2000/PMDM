@@ -91,7 +91,7 @@ A continuación se muestra una lista breve de los más comunes.
 
 > [!TIP]
 >
-> Todos estos componentes se pueden estilizar usando el sistema de estilos de React Native (`StyleSheet`) o bibliotecas externas como `styled-components` o `tailwind-rn`.
+> Todos estos componentes se pueden estilizar usando el sistema de estilos de React Native (`StyleSheet`) o bibliotecas externas como `styled-components` .
 
 
 
