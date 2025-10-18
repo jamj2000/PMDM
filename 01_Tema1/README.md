@@ -18,7 +18,11 @@
 - [4. Crear nuevo proyecto con expo](#4-crear-nuevo-proyecto-con-expo)
   - [4.1. Plantillas](#41-plantillas)
   - [4.2. Ejemplos](#42-ejemplos)
-- [5. Referencias](#5-referencias)
+- [5. Construir el proyecto (Build)](#5-construir-el-proyecto-build)
+  - [5.1. Plataformas](#51-plataformas)
+  - [5.2. Perfiles](#52-perfiles)
+- [6. Referencias](#6-referencias)
+
 
 
 
@@ -172,6 +176,12 @@ Las plantillas disponibles son:
   Una plantilla en blanco con directorios nativos (android y ios) generados. Ejecuta `npx expo prebuild` durante la configuración.
 
 
+> [!TIP]
+>
+> - La plantilla **`blank`** es más adecuada para realizar una aplicaciones sencillas de una única pantalla.
+> - La plantilla **`default`** es más adecuada para realizar una aplicaciones de una varias pantalla.
+
+
 ## 4.2. Ejemplos
 
 Podemos crear un proyecto nuevo con código de ejemplo con la opción [**`--example`**](https://docs.expo.dev/more/create-expo/#--example)
@@ -188,4 +198,88 @@ npx   create-expo-app   --example with-router
 > Ejemplos disponibles en https://github.com/expo/examples
 
 
-# 5. Referencias
+# 5. Construir el proyecto (Build)
+
+Podemos realizar el *build* para las siguientes plataformas:
+
+- **Android**
+- **IOS**
+- **Web**
+  
+> [!NOTE]
+>
+> El *build* para IOS requiere de una cuenta de pago como desarrollador en la plataforma de Apple.
+
+En adelante nos centraremos en la plataforma Android.
+
+Expo nos proporciona un sistema en la nube para realizar la construcción de nuestras aplicaciones, conocido como EAS (Expo Application Services). Podemos registrarnos en https://expo.dev/eas. Actualmente (octubre 2025), con el plan gratuito podemos realizar 15 build para Android y otras 15 build para IOS.
+
+Si sobrepasamos ese límite también podemos hacer *build* en nuestra propia computadora. Sigue leyendo más abajo.
+
+Una vez registrados en la plataforma EAS, en nuestro ordenador gestionaremos el proceso de construcción de nuestra aplicación desde nuestro ordenador y usaremos la web para ver los *build* realizados y descargar los archivos resultantes.
+
+En nuestra computadora, instalaremos el programa para interactuar con EAS.
+
+```sh
+npm install -g eas-cli
+```
+
+Una vez instalado, nos autenticaremos con las credenciales con las cuales realizamos el alta en EAS.
+
+```sh
+eas login
+```
+
+> [!NOTE]
+>
+> Observa que una vez instalado el paquete `eas-cli`, debemos usar el **comando `eas`**
+
+
+Una vez realizado el login correctamente, **en cada proyecto** deberemos ejecutar:
+
+```sh
+eas  init
+```
+
+Esto permote inicializar y vincular el proyecto a EAS
+
+
+## 5.1. Plataformas
+
+Las plataformas soportadas son:
+
+- `android`
+- `ios`
+- `web`
+
+
+```sh
+eas  build  --platform android
+```
+
+## 5.2. Perfiles
+
+Existen 3 perfiles al generar el *build* en nivel creciente de refinamiento. Son:
+
+- `development`
+- `preview`
+- `production`
+
+
+```sh
+eas  build  --platform android  --profile preview
+```
+
+> [!TIP]
+>
+> Si tenemos instalado Android Studio, podremos realizar una construcción en nuestro propia computadora. Para ello usaremos el *flag*  `--local`
+>
+> ```sh
+> eas  build  --platform android  --profile preview  --local
+> ```
+
+
+
+# 6. Referencias
+
+- [Tutorial EAS](https://docs.expo.dev/tutorial/eas/introduction/)
