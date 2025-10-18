@@ -304,8 +304,9 @@ Podemos usar los componentes proporcionados por react-native más muchos otros q
 ## 3.2. Visuales y multimedia
 | Módulo                   | Descripción                               |
 | ------------------------ | ----------------------------------------- |
-| `expo-av`                | Reproducción de audio y video.            |
 | `expo-image`             | Carga optimizada de imágenes.             |
+| `expo-audio`             | Reproducción de audio.                    |
+| `expo-video`             | Reproducción de video.                    |
 | `expo-blur`              | Efecto de desenfoque sobre vistas.        |
 | `expo-linear-gradient`   | Gradientes de color.                      |
 | `expo-video-thumbnails`  | Genera miniaturas de videos.              |
@@ -313,7 +314,7 @@ Podemos usar los componentes proporcionados por react-native más muchos otros q
 
 > [!NOTE]
 >
-> Existen un componente **`Image`** tanto en el paquete `react-native` como en el paquete `expo-image`. La diferencia entre Image de React Native y Image de Expo (en el paquete expo-image) es importante, especialmente en temas de rendimiento, caché y funcionalidad avanzada.
+> Existe un componente **`Image`** tanto en el paquete `react-native` como en el paquete `expo-image`. La diferencia entre Image de React Native e Image de Expo (en el paquete expo-image) es importante, especialmente en temas de rendimiento, caché y funcionalidad avanzada.
 >
 > # Comparativa: `Image` (React Native) vs `expo-image` (Expo)
 > 

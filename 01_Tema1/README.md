@@ -216,7 +216,7 @@ Expo nos proporciona un sistema en la nube para realizar la construcción de nue
 
 Si sobrepasamos ese límite también podemos hacer *build* en nuestra propia computadora. Sigue leyendo más abajo.
 
-Una vez registrados en la plataforma EAS, en nuestro ordenador gestionaremos el proceso de construcción de nuestra aplicación desde nuestro ordenador y usaremos la web para ver los *build* realizados y descargar los archivos resultantes.
+Una vez registrados en la plataforma EAS, en nuestro ordenador gestionaremos el proceso de construcción de nuestra aplicación desde nuestro ordenador y usaremos la web de EAS para ver los *build* realizados y descargar los archivos resultantes.
 
 En nuestra computadora, instalaremos el programa para interactuar con EAS.
 
@@ -241,7 +241,7 @@ Una vez realizado el login correctamente, **en cada proyecto** deberemos ejecuta
 eas  init
 ```
 
-Esto permote inicializar y vincular el proyecto a EAS
+Esto permite inicializar y vincular el proyecto a EAS
 
 
 ## 5.1. Plataformas
