@@ -20,3 +20,8 @@
 
 
 # 2. Referencias
+
+- [Colección de demos realizada con Reanimated, Gesture Handler y Skia](https://github.com/enzomanuelmangano/demos)
+- [Documentación de React Native Skia](https://shopify.github.io/react-native-skia/docs/getting-started/installation)
+- [Tutoriales de React Native Skia](https://shopify.github.io/react-native-skia/docs/tutorials)
+- [Build Expo apps for TV](https://docs.expo.dev/guides/building-for-tv/)
