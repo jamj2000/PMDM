@@ -396,4 +396,6 @@ Podemos usar los componentes proporcionados por react-native más muchos otros q
 
 # 4. Referencias
 
+- [Canal de Expo en Youtube](https://www.youtube.com/@ExpoDevelopers)
+- [Tutorial de Expo Router: Stack, Tabs, Modals, ...](https://www.youtube.com/watch?v=Yh6Qlg2CYwQ&list=PLsXDmrmFV_AT17JDf-otXSNE_eH7s0uDD)
 
