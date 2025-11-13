@@ -28,6 +28,7 @@
 - [4. Referencias](#4-referencias)
 
 
+
 ---
 
 
@@ -332,6 +333,20 @@ Podemos usar los componentes proporcionados por react-native más muchos otros q
 > | **Compatibilidad web** | Soporte básico en Expo Web. | Mejor integración con Expo Web (usa `<img>` debajo). |
 >
 >
+
+> [!NOTE]
+>
+> # Origenes de la imagen
+> 
+>
+> | Origen de imagen                 | Cómo usarla en el componente **`Image`**   |
+> | ------------------------------ | --------------------------------------------- |
+> | Imagen local (en assets)       | source={require('./assets/img.png')}          |
+> | Imagen Base64                  | source={{ uri: 'data:image/png;base64,...' }} |
+> | Imagen en Internet             | source={{ uri: 'https://...' }}               |
+> | Imagen en almacenamiento local | source={{ uri: 'file:///...' }}               |
+
+
 
 
 ## 3.3. APIs de hardware y sensores
