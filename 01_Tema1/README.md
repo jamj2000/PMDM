@@ -21,6 +21,7 @@
 - [5. Construir el proyecto (Build)](#5-construir-el-proyecto-build)
   - [5.1. Plataformas](#51-plataformas)
   - [5.2. Perfiles](#52-perfiles)
+  - [5.3. Variables de entorno](#53-variables-de-entorno)
 - [6. Referencias](#6-referencias)
 
 
@@ -262,8 +263,8 @@ eas  build  --platform android
 Existen 3 perfiles al generar el *build* en nivel creciente de refinamiento. Son:
 
 - `development`
-- `preview`
-- `production`
+- `preview`      (genera **APK** en Android)
+- `production`   (genera **AAB** en Android)
 
 
 ```sh
@@ -277,6 +278,114 @@ eas  build  --platform android  --profile preview
 > ```sh
 > eas  build  --platform android  --profile preview  --local
 > ```
+
+
+## 5.3. Variables de entorno
+
+En EAS Build (Expo) las variables de entorno se pueden pasar de varias formas, y no todas se comportan igual. Las opciones correctas y recomendadas son las siguientes.
+
+**Forma recomendada: eas.json (por perfil)**
+
+Es la manera oficial y más usada.
+
+```json
+{
+  "build": {
+    "production": {
+      "env": {
+        "EXPO_PUBLIC_API_URL": "https://api.miapp.com",
+        "SENTRY_DSN": "https://xxxx"
+      }
+    },
+    "preview": {
+      "env": {
+        "EXPO_PUBLIC_API_URL": "https://api.miapp.com",
+        "SENTRY_DSN": "https://xxxx"
+      }
+    },
+    "development": {
+      "env": {
+        "EXPO_PUBLIC_API_URL": "http://localhost:3000"
+      }
+    }
+  }
+}
+```
+
+
+Uso en código:
+
+```js
+const apiUrl = process.env.EXPO_PUBLIC_API_URL;
+```
+
+
+Luego ejecutas:
+
+```sh
+eas build --profile preview --platform android
+```
+
+Estas variables estarán disponibles durante el **build** y en **runtime**.
+
+
+> [!TIP]
+> 
+> Desde Expo SDK 49+, las variables que quieras usar en el código JS deben empezar por **EXPO_PUBLIC_**
+
+
+
+> [!WARNING]
+>
+> Todo lo que tenga EXPO_PUBLIC_ se expone al cliente. No debe usarse para secretos.
+
+
+**Variables secretas (recomendado para tokens)**
+
+Para claves privadas (API keys, tokens, etc.) usa EAS Secrets:
+
+```sh
+eas secret:create
+```
+
+O directamente:
+
+```sh
+eas secret:create --name STRIPE_SECRET_KEY --value sk_test_...
+```
+
+Luego se usan automáticamente en el build:
+
+```js
+process.env.STRIPE_SECRET_KEY
+```
+
+No aparecen en logs ni en eas.json.
+
+
+**Variables locales (solo para builds locales)**
+
+```sh
+API_URL=http://localhost:3000 eas build --local
+```
+
+No funciona para builds remotos.
+
+❌ Lo que NO funciona
+
+- Variables en .env no se leen automáticamente por EAS Build
+- Variables del shell local no se pasan al build remoto
+- Usar variables sin EXPO_PUBLIC_ en el código cliente
+
+Resumen rápido
+
+| Caso                  | Solución            |
+| --------------------- | ------------------- |
+| Variables por entorno | eas.json            |
+| Variables públicas JS | EXPO_PUBLIC_        |
+| Claves secretas       | eas secret          |
+| Build local           | Variables del shell |
+
 
 
 
