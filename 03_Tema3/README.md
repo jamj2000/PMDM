@@ -1,13 +1,6 @@
 > PROGRAMACIÓN MULTIMEDIA Y DISPOSITVOS MÓVILES
 
 # Tema 3: INTEGRACIÓN DE CONTENIDO MULTIMEDIA Y LIBRERÍAS ESPECÍFICAS <!-- omit in toc -->
-> Imagen, audio, vídeo, persistencia de datos  
-> BIBLIOTECAS
-
-
-> PROGRAMACIÓN MULTIMEDIA Y DISPOSITVOS MÓVILES
-
-# Tema 3: INTEGRACIÓN DE CONTENIDO MULTIMEDIA Y LIBRERÍAS ESPECÍFICAS <!-- omit in toc -->
 > Audio, vídeo, persistencia de datos  
 > LIBRERÍAS
 
@@ -17,11 +10,11 @@
     - [2.1.1. useContext](#211-usecontext)
     - [2.1.2. Redux](#212-redux)
     - [2.1.3. Zustand](#213-zustand)
-    - [Comparativa](#comparativa)
+    - [2.1.4. Comparativa](#214-comparativa)
   - [2.2. Gestión de datos asíncronos](#22-gestión-de-datos-asíncronos)
     - [2.2.1. Tanstack Query](#221-tanstack-query)
-      - [Consultas (GET)](#consultas-get)
-      - [Mutaciones (POST, PUT, DELETE)](#mutaciones-post-put-delete)
+      - [2.2.1.1. Consultas (GET)](#2211-consultas-get)
+      - [2.2.1.2. Mutaciones (POST, PUT, DELETE)](#2212-mutaciones-post-put-delete)
 - [3. Contenido multimedia](#3-contenido-multimedia)
   - [3.1. Imagen](#31-imagen)
   - [3.2. Audio](#32-audio)
@@ -31,6 +24,7 @@
   - [4.2. GPS](#42-gps)
   - [4.3. Sensores](#43-sensores)
 - [5. Referencias](#5-referencias)
+
 
 
 
@@ -76,11 +70,11 @@ Uso típico:
 - Consumir los datos mediante `useContext`.
 
 
-**Ejemplo: Contexto para gestionar el usuario autenticado**
+**Ejemplo: Gestionar el usuario autenticado**
 
 Seguir los 3 pasos siguientes:
 
-1. Crear el Contexto
+1. Crear el Contexto y el Proveedor
 
 ```js
 // UserContext.js
@@ -315,7 +309,7 @@ Es una opción recomendable cuando:
 
 **Ejemplo: Gestionar el usuario autenticado**
 
-Zustand no necesita `Provider`. El estado se crea como un *hook* global.
+Zustand no necesita `Provider`. El estado se crea como un ***hook*** global.
 
 Seguir los 3 pasos siguientes:
 
@@ -375,7 +369,7 @@ Características de Zustand
 - Ideal para proyectos pequeños y medianos
 
 
-### Comparativa
+### 2.1.4. Comparativa
 
 | Característica            | useContext       | Zustand       | Redux Toolkit |
 | ------------------------- | ---------------- | ------------- | ------------- |
@@ -388,11 +382,13 @@ Características de Zustand
 | Arquitectura estructurada | ❌ No obligatoria | ❌ Flexible    | ✅ Sí (Slices) |
 | Ideal para                | Estados simples  | Apps medianas | Apps grandes  |
 
-**🎯 Recomendación práctica**
-
-- **useContext** → Ideal para estados globales simples (tema, autenticación básica).
-- **Zustand** → Excelente equilibrio entre simplicidad y potencia.
-- **Redux Toolkit** → Recomendado para aplicaciones grandes con múltiples dominios de estado.
+> [!TIP]
+>
+>  **Recomendación práctica**
+> 
+> - **useContext** → Ideal para estados globales simples (tema, autenticación básica).
+> - **Zustand** → Excelente equilibrio entre simplicidad y potencia.
+> - **Redux Toolkit** → Recomendado para aplicaciones grandes con múltiples dominios de estado.
 
 
 
@@ -546,7 +542,7 @@ export default function App() {
 
 
 
-#### Consultas (GET)
+#### 2.2.1.1. Consultas (GET)
 
 Para consultar datos se usa **`useQuery`**.
 
@@ -601,7 +597,7 @@ export default function UsersScreen() {
   - Actualizar datos en segundo plano.
 
 
-#### Mutaciones (POST, PUT, DELETE)
+#### 2.2.1.2. Mutaciones (POST, PUT, DELETE)
 
 Para modificar datos se usa **`useMutation`**.
 
