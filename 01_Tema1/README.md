@@ -36,6 +36,13 @@
 
 # 1. Introducción
 
+En este tema se abordarán, en primer lugar, las principales **tecnologías de desarrollo para dispositivos móviles**, analizando sus características, ventajas y limitaciones. Se explorará el **desarrollo nativo**, los **frameworks multiplataforma**, las **aplicaciones híbridas** y las **Progressive Web Apps (PWA)**, finalizando con una comparación rápida que permitirá comprender en qué contexto conviene utilizar cada enfoque.
+
+A continuación, se realizará una **introducción a React Native y Expo**, dos herramientas ampliamente utilizadas en el ecosistema actual para el desarrollo multiplataforma. Se explicarán sus fundamentos, su propuesta de valor y cómo se integran para facilitar la creación de aplicaciones móviles modernas.
+
+Posteriormente, se describirá el proceso para **crear un nuevo proyecto con Expo**, revisando las distintas plantillas y ejemplos disponibles que permiten iniciar rápidamente un desarrollo adaptado a diferentes necesidades.
+
+Finalmente, se estudiará cómo **construir (build) el proyecto**, analizando las plataformas de destino, los perfiles de configuración y la gestión de variables de entorno, elementos clave para preparar una aplicación para producción
 
 # 2. Tecnologías de desarrollo para dispositivos móviles
 

@@ -35,6 +35,13 @@
 
 # 1. Introducción
 
+Este tema tiene como objetivo proporcionar una visión estructurada y práctica de **React Native** y su ecosistema, comenzando por una revisión de sus **componentes incorporados**, fundamentales para construir la interfaz y la lógica de interacción. Se analizarán los componentes de interfaz de usuario, los componentes de interacción y los componentes de utilidad, entendiendo cómo se combinan para formar aplicaciones completas.
+
+Posteriormente, se abordará el sistema de **estilos en React Native**, explicando su sintaxis, su enfoque basado en objetos y sus principales características, junto con un ejemplo básico que permita comprender su funcionamiento. También se estudiará el módulo **Platform**, clave para adaptar el comportamiento de la aplicación según el sistema operativo, revisando sus propiedades y métodos más utilizados.
+
+En la segunda parte del tema, se introducirá **Expo**, una plataforma que simplifica el desarrollo con React Native al proporcionar herramientas, servicios y un amplio conjunto de APIs listas para usar. Se explorarán sus componentes básicos, recursos visuales y multimedia, acceso a hardware y sensores, APIs del sistema, servicios adicionales, opciones de configuración y utilidades pensadas para mejorar la experiencia del desarrollador.
+
+
 
 # 2. React Native
 
