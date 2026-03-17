@@ -79,4 +79,5 @@
 
 # 4. Referencias
 
-- [js13kgames](https://js13kgames.com/)
+- [GameFromScratch - canal youtube](https://www.youtube.com/gamefromscratch)
+- [js13kgame - js web game development competition with 13KB size limit](https://js13kgames.com/)
