@@ -6,13 +6,13 @@
 
 - [1. Introducción](#1-introducción)
 - [2. Bibliotecas de React útiles para React Native](#2-bibliotecas-de-react-útiles-para-react-native)
-  - [2.1. Estado global](#21-estado-global)
+  - [2.1. Client State: Estado global](#21-client-state-estado-global)
     - [2.1.1. useContext](#211-usecontext)
     - [2.1.2. Redux](#212-redux)
     - [2.1.3. Zustand](#213-zustand)
     - [2.1.4. Comparativa](#214-comparativa)
-  - [2.2. Gestión de datos asíncronos](#22-gestión-de-datos-asíncronos)
-    - [2.2.1. Tanstack Query](#221-tanstack-query)
+  - [2.2. Server State: Gestión de datos asíncronos](#22-server-state-gestión-de-datos-asíncronos)
+    - [2.2.1. TanStack Query](#221-tanstack-query)
       - [2.2.1.1. Consultas (GET)](#2211-consultas-get)
       - [2.2.1.2. Mutaciones (POST, PUT, DELETE)](#2212-mutaciones-post-put-delete)
 - [3. Contenido multimedia](#3-contenido-multimedia)
@@ -45,7 +45,7 @@ El objetivo es comprender cómo estructurar aplicaciones más complejas, escalab
 
 Aunque React Native proporciona una base sólida, en proyectos reales es habitual apoyarse en bibliotecas externas que resuelven problemas comunes como la gestión del estado o la sincronización con servidores.
 
-## 2.1. Estado global
+## 2.1. Client State: Estado global
 
 En aplicaciones medianas o grandes es necesario compartir información entre múltiples pantallas y componentes: usuario autenticado, tema visual, carrito de compra, configuración, etc.
 
@@ -392,13 +392,15 @@ Características de Zustand
 
 
 
-## 2.2. Gestión de datos asíncronos
+## 2.2. Server State: Gestión de datos asíncronos
 
 Las aplicaciones móviles suelen interactuar con APIs remotas para obtener o enviar información. La gestión manual de estados como `loading`, `error` y `success` puede volverse repetitiva.
 
-### 2.2.1. Tanstack Query
+Para realizar la **gestión de estado del servidor en el cliente** se usa habitualmente TanStack Query.
 
-Tanstack Query (antes React Query) es una biblioteca diseñada para la **gestión de datos asíncronos y sincronización con servidores**.
+### 2.2.1. TanStack Query
+
+TanStack Query (antes React Query) es una biblioteca diseñada para la **gestión de datos asíncronos y sincronización con servidores**.
 
 **Funcionalidades destacadas:**
 - Cache automática.
@@ -419,7 +421,7 @@ Es especialmente útil en aplicaciones que:
 
 > [!IMPORTANT]
 >
-> Tanstack Query no reemplaza al estado global, sino que gestiona el “estado del servidor” (server state), mientras que Redux/Zustand gestionan el “estado de la aplicación” (client state).
+> TanStack Query no reemplaza al estado global, sino que gestiona el **“estado del servidor” (server state)**, mientras que Redux/Zustand gestionan el **“estado de la aplicación” (client state)**.
 
 Las aplicaciones móviles modernas consumen datos desde APIs externas, bases de datos remotas o servicios en la nube. Esto implica trabajar con **operaciones asíncronas**, como:
 
@@ -477,9 +479,9 @@ export default function UsersScreen() {
 > - Código repetitivo en cada pantalla
 > - Difícil escalabilidad
 
-Para resolver estos problemas existen bibliotecas especializadas como **Tanstack Query**.
+Para resolver estos problemas existen bibliotecas especializadas como **TanStack Query**.
 
-Tanstack Query (anteriormente React Query) es una librería diseñada para la gestión avanzada de datos asíncronos y sincronización con servidores.
+TanStack Query (anteriormente React Query) es una librería diseñada para la gestión avanzada de datos asíncronos y sincronización con servidores.
 
 > [!TIP]
 > 
@@ -491,7 +493,7 @@ Tanstack Query (anteriormente React Query) es una librería diseñada para la ge
 
 **Ventajas frente a useEffect + fetch**
 
-| Característica                  | useEffect + fetch | Tanstack Query |
+| Característica                  | useEffect + fetch | TanStack Query |
 | ------------------------------- | ----------------- | -------------- |
 | Gestión de loading              | Manual            | Automática     |
 | Gestión de errores              | Manual            | Automática     |
@@ -531,7 +533,7 @@ export default function App() {
 
 > [!TIP]
 >
-> **Cuándo usar Tanstack Query**
+> **Cuándo usar TanStack Query**
 >
 > - Apps que consumen APIs REST o GraphQL.
 > - Aplicaciones con múltiples pantallas que comparten datos.
@@ -635,6 +637,12 @@ const mutation = useMutation({
 > - Usar claves de query estructuradas (`["users", userId]`).
 > - Invalidar queries tras mutaciones.
 > - No usar estado local para datos que provienen del servidor.
+
+
+> [!TIP]
+>
+> [TanStack Query](https://tanstack.com/query/latest) y [SWR](https://swr.vercel.app/) son librerías de **gestión de estado del servidor en el cliente, especializadas en obtener, almacenar en caché, sincronizar y revalidar datos remotos**.
+>
 
 
 # 3. Contenido multimedia
